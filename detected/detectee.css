@@ -1,0 +1,19 @@
+ #btn1:hover{
+    cursor: pointer;
+  }
+  #btn2:hover{
+    cursor:pointer;
+  }
+  body{
+    background-color: whitesmoke;
+}
+/*.one
+{
+    background-color: black;
+    position: fixed;
+    opacity: 100;
+    width: 100%;
+}
+.navigation{
+    color: antiquewhite
+}*/

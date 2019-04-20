@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baggage Detection</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="indexcss.css">
+    <script src="jquery-3.2.1.js"></script>
+    <script src="indexjs.js"></script>
+</head>
+<body>
+
+<div class="one row" id="id"> <h1 style="padding-left:770px; color: antiquewhite;font-size:40px; font-family: 'Roboto'">Real Time Baggage Detection</h1>
+
+  <br><br><br><br>
+    <div class="row nav-bar">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="home" class="navigation">Home</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="about" class="navigation">About</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="stafflogin" class="navigation">Staff Details</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span id="PAPRegistration" class="navigation">Legal Details</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+    </div>
+</div>
+
+
+
+<div class="container" style="position:relative; padding-top:140px; left:-3%; top:20%">
+    <div class="row" id="login-frame">
+    <div class="col-md-5">
+<!----video align="center"  loop='true' width="540" autoplay='true' height="480" style="align-content: center" id="video2" controls src="videowithoutbox.mp4"-->
+    <video id="vid1" width="480" height="420" autoplay='true' controls>
+        <source src="videowithoutbox.mp4" type="video/mp4">
+        <source src="videowithoutbox.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<div class="col-md-2"><button id="btn1">Check uploaded video</div>
+<div class="col-md-5">
+<!----video align="center"  loop='true' width="540" autoplay='true' height="480" id="video1" style="position:relative; left:-30%"  controls src="videowithbox.mp4"-->    
+<video id="vid2" width="480" height="420"  autoplay='true' title="Hello1" controls>
+    <source src="videowithbox.mp4" type="video/mp4">
+    <source src="videowithbox.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>
+<div class="row" style="height:170px; background-color:cornsilk; width:102%; text-align:center;">
+<span style="padding-left:190px; align-self: center; position: relative; top:26px; font-size: 24px; font-family: sans-serif">With the recent case of Pulwama attack, the number of terrorism attacks are on a rise</span>
+<span style="padding-left:118px; align-self: center;font-size: 24px; position: relative; top:-18px; font-family: sans-serif"> Public places like Airports, Metro, Bus and Railway stations are major locations for terrorists attacks</span>
+</div>
+<div class="row" style="height:170px; background-color:blanchedalmond; width:102%; text-align:center;">
+<span style="padding-left:240px; align-self: center; position: relative; top:26px; font-size: 24px; font-family: sans-serif">Stay Guardian keeps a tab on live feed from cameras at these public places</span>
+<span style="padding-left:55px; align-self: center;font-size: 24px; position: relative; top:-18px; font-family: sans-serif">If it finds an unattended baggage, it will alert the authorities about the position and time of suspected baggage</span>
+</div>
+<script>
+
+  var callOnce = true;
+
+  function monitorVideo() {
+    if ((vid1.duration - vid1.currentTime) < 2 ){
+                if (callOnce) {
+                    setTimeout(1000);
+                    myFunction();
+                    callOnce = false;
+                }
+            }
+  }
+
+  function myFunction() {
+      vid2.pause;
+      vid1.pause;
+      window.alert('UNATTENDED BAG DETECTED!')
+      window.location.replace('./detected','_self');
+      console.log('5 seconds');
+  }
+  setInterval(monitorVideo,100);
+</script>
+</body>
